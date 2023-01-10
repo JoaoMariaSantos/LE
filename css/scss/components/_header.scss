@@ -1,0 +1,30 @@
+$headerHeight : 10vh;
+
+header {
+    display: relative;
+    width: 100vw;
+    height: $headerHeight;
+    z-index: $z__top;
+    div {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        span {
+            font-family: blop;
+            font-size: 3vw;
+            position: absolute;
+            top: calc($headerHeight / 2);
+            transform: translateY(-50%);
+
+            &:first-of-type {
+                left: calc($headerHeight / 2);
+            }
+
+            &:last-of-type {
+                right: calc($headerHeight / 2);
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+main {
+    #magazine {
+        height: 100vh - $headerHeight;
+        width: 100vw;
+
+        &--grid {
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            grid-gap: 8px;
+            padding: 8px;
+            grid-auto-flow: row dense;
+            background-color: rgb(255, 255, 255); //mexer nisto
+
+            div {
+                background-color: white;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain; //mexer nisto - contain aqui com branco acima fica giro tbm
+                filter: saturate(0);
+                cursor: pointer;
+
+                &:hover {
+                    filter: invert(1) saturate(0);
+                    
+                }
+            }
+        }
+
+        h1{
+            font-size: 2vw;
+        }
+        h3{
+            font-size: 2vw;
+        }
+    }
+}

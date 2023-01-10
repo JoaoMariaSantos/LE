@@ -1,0 +1,29 @@
+main {
+    #about__text {
+        width: 100vw;
+        height: 100vh - $headerHeight;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        div {
+            text-align: center;
+            display: block;
+            width: 80vw;
+            height: auto;
+            position: relative;
+            bottom: 10vh;
+
+            span {
+                font-size: 16vw;
+                font-family: blop;
+            }
+
+            p {
+                width: 50%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+}

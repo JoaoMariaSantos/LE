@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/scss/main.css">
+    <title>Home</title>
+</head>
+
+<body>
+    <header>
+        <div id="header__wrap">
+            <span>ALTA</span>
+            <nav>
+                <ul>
+                    <li id="nav__option--selected"><a href="/index.html">HOME</a></li>
+                    <li><a href="/articleList.html">ARTICLES</a></li>
+                    <li><a href="/about.html">ABOUT</a></li>
+                </ul>
+                <div id="nav__blob">
+                    <svg viewbox="0 0 60 60">
+                        <path d="M 5 30 C 5 15 15 5 30 5 C 45 5 55 15 55 30 C 55 45 45 55 30 55 C 15 55 5 45 5 30"
+                            fill="black" />
+                    </svg>
+                </div>
+            </nav>
+            <span>BAIXA</span>
+        </div>
+    </header>
+    <main>
+        <img class="home__effects--bottom">
+        <div id="home__text--interaction">
+            <span>ALTA E</span>
+            <span>BAIXA</span>
+        </div>
+        <img class="home__effects--top">
+    </main>
+
+    <div class="cursor">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script>
+$(document).mousemove(function(e){
+  //Get 'container' offset:
+  o = $('.cursor').offset();
+  //Track mouse position:
+  $(".dot").css({
+    "top": e.pageY - o.top,
+    "left": e.pageX - o.left
+  });
+});
+</script>
+<script src="/js/navBlob.js"></script>
+<script src="/js/index.js"></script>
+<script src="/js/cursor.js"></script>
+
+</html>
