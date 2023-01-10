@@ -3,13 +3,17 @@
     height: 100vh - $headerHeight;
     overflow-y: auto;
     padding: 16px;
+    padding-bottom: 200px;
 
-    /* &::-webkit-scrollbar {
+    &::-webkit-scrollbar {
         display: none;
-    } */
+    }
 
     *{
         transform-origin: center;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     h1{
@@ -21,16 +25,21 @@
         letter-spacing: 0.4vw;
         font-family: blop;
         overflow: visible;
-        width: 70%;
-        margin-top: 160px;;
+        width: 50%;
+        margin-top: 40px;;
     }
 
     p {
         font-size: larger;
-        margin: 80px;
+        margin-top: 24px;
         display: block;
         width: 40%;
     }
 
-
+    img{
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        display: block;
+    }
 }

@@ -202,12 +202,16 @@ nav:hover ul li:hover {
   height: 90vh;
   overflow-y: auto;
   padding: 16px;
-  /* &::-webkit-scrollbar {
-      display: none;
-  } */
+  padding-bottom: 200px;
+}
+#article::-webkit-scrollbar {
+  display: none;
 }
 #article * {
   transform-origin: center;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
 }
 #article h1 {
   font-size: 3vw;
@@ -217,14 +221,20 @@ nav:hover ul li:hover {
   letter-spacing: 0.4vw;
   font-family: blop;
   overflow: visible;
-  width: 70%;
-  margin-top: 160px;
+  width: 50%;
+  margin-top: 40px;
 }
 #article p {
   font-size: larger;
-  margin: 80px;
+  margin-top: 24px;
   display: block;
   width: 40%;
+}
+#article img {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  display: block;
 }
 
 main #about__text {
