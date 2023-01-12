@@ -1,55 +1,73 @@
-let scrollValue = 0;
-const effectsTop = document.querySelector('.home__effects--top');
-const effectsBottom = document.querySelector('.home__effects--bottom');
+const container = document.querySelector('#home__text--interaction');
+const letterDivs = container.querySelectorAll('.glyph');
 
-const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
+const nLetters = 9;
+const nPhases = 11;
 
-const imgWidth = 1500;
-const imgHeight = 3000;
+let spriteW = 288;
+let spriteH = 462;
 
-window.addEventListener('wheel', function (event) {
-    if(scrollValue == 0) setBackgrounds();
-    if (event.deltaY < 0) {
-        if(scrollValue > 0) scrollValue--;
+const spriteURL = '/assets/spritesheet/spriteSheet_03.png'
+
+let letterTracker = new Array(nLetters);
+
+setupTracker();
+
+function setupTracker() {
+    fillTracker();
+    window.addEventListener('wheel', managePhases);
+    updateDivs();
+    applyClickListener();
+}
+
+function fillTracker(){
+    for(let i = 0; i < letterTracker.length; i++){
+        letterTracker[i] = {phase: 0, direction: true};
     }
-    else if (event.deltaY > 0) {
-        scrollValue++;
-    }
-    setTop(effectsBottom, 3);
-    setTop(effectsTop, 9);
-});
-
-function setBackgrounds(){
-    effectsTop.src = '/assets/effects/effect (' + getRandomImageIndex(3) + ').png';
-    effectsBottom.src = '/assets/effects/effect (' + getRandomImageIndex(3) + ').png';
 }
 
-function setTop(element, value){
-    let pixels = Math.floor(-scrollValue * value);
-    if(-pixels > imgHeight){
-        pixels = -Math.floor(-pixels % imgHeight);
-    }
-    element.style.top = (pixels + vh) + 'px';
-}
+function managePhases() {
 
-function getRandomImageIndex(max) {
-    let num = Math.floor(Math.random() * max) + 1;
-    //num = addLeadingZeros(num);
-    return num;
-}
+    for(let i = 0; i < letterTracker.length; i++){
+        console.log(i + "   " + letterTracker[i].direction + "  " + letterTracker[i].phase);
+        let toAdd = Math.floor(Math.random() * 2);
 
-function addLeadingZeros(num) {
-    if (num < 0) {
-        const withoutMinus = String(num).slice(1);
-        return '-' + withoutMinus.padStart(3, '0');
+        if (!letterTracker[i].direction) toAdd *= -1;
+
+        let newPhase = letterTracker[i].phase + toAdd;
+
+        if (newPhase < 0 || newPhase > (nPhases - 1)) {
+            if (newPhase < 0) {
+                letterTracker[i].phase = - (letterTracker[i].phase + toAdd);
+            } else {
+                letterTracker[i].phase = (nPhases-1) - (letterTracker[i].phase + toAdd - (nPhases-1));
+            }
+            letterTracker[i].direction = !letterTracker[i].direction;
+        }
+        else letterTracker[i].phase = newPhase;
     }
 
-    return String(num).padStart(3, '0');
+    updateDivs();
 }
 
-function getRandomPos(element, maxX, maxY) {
-    element.style.left = -Math.random() * maxX + 'px';
-    element.style.top = -Math.random() * maxY + 'px';
+function updateDivs() {
+    for(let i = 0; i < letterTracker.length; i++){
+        const letterX = (nLetters * spriteW) - (i * spriteW);
+        const letterY = (nPhases* spriteH) - (letterTracker[i].phase * spriteH);
+
+        letterDivs[i].style.backgroundPosition = letterX + 'px ' + letterY + 'px';
+    }
 }
 
+function applyClickListener(){
+    letterDivs.forEach((div, i) => {
+        div.addEventListener('click', function(){
+            setRandomLetter(i);
+        })
+    })
+}
+
+function setRandomLetter(i){
+    letterTracker[i].phase = Math.floor(Math.random()*(nPhases));
+    updateDivs();
+}

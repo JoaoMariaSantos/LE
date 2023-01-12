@@ -83,6 +83,7 @@ nav {
   justify-content: center;
   z-index: 1;
   overflow: hidden;
+  font-family: "lexend";
 }
 nav #nav__blob {
   position: relative;
@@ -115,7 +116,9 @@ nav ul li {
   width: -moz-max-content;
   width: max-content;
   display: inline;
-  margin-right: 24px;
+  margin-right: 4em;
+  font-size: 1.5em;
+  overflow: visible;
 }
 nav ul li:last-child {
   margin-right: 0;
@@ -124,9 +127,11 @@ nav ul li a {
   color: white !important;
 }
 nav ul #nav__option--selected {
+  transform-origin: center;
+  transform: scale(200%);
   font-weight: 900;
+  font-size: 1.8em;
 }
-
 nav:hover #nav__blob {
   position: relative;
   border-radius: 50%;
@@ -141,60 +146,41 @@ nav:hover ul {
   transform: scale(100%);
   opacity: 1;
 }
-nav:hover ul li:hover {
-  border: 1px solid white;
-  border-radius: 50%;
-  display: inline;
+nav:hover a:hover {
+  color: #ea6423 !important;
 }
 
+#home__text {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  overflow: visible;
+}
 #home__text--interaction {
-  padding: 1vh;
-  padding-top: 10vh;
-  left: 0;
-  line-height: 11.2vw;
-  overflow: hidden;
   margin: auto;
-  font-weight: 800;
-  font-family: blop;
-  letter-spacing: 3em;
-  line-height: 17vw;
   width: 97%;
-  position: relative;
   overflow: visible;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
 }
-#home__text--interaction span:first-of-type {
-  font-size: 37vw;
+#home__text--interaction div {
+  display: flex;
+  justify-content: center;
+  overflow: visible;
+  margin-top: 8px;
 }
-#home__text--interaction span:last-of-type {
-  font-size: 37vw;
+#home__text--interaction div div {
+  display: inline-block;
+  width: 288px;
+  height: 462px;
+  margin: -24px;
+  background-image: url("/assets/spritesheet/spriteSheet_03.png");
 }
-
-.home__effects--top {
-  width: 120vw;
-  height: 240vw;
-  position: absolute;
-  filter: saturate(0);
-  top: 0;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-.home__effects--bottom {
-  width: 100vw;
-  height: 200vw;
-  position: absolute;
-  filter: saturate(0);
-  top: 0;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+#home__text--interaction div div:hover {
+  filter: invert(49%) sepia(64%) saturate(2439%) hue-rotate(346deg) brightness(94%) contrast(95%);
+  cursor: pointer;
 }
 
 #article {
@@ -228,7 +214,7 @@ nav:hover ul li:hover {
   font-size: larger;
   margin-top: 24px;
   display: block;
-  width: 40%;
+  width: 30%;
 }
 #article img {
   margin-left: auto;

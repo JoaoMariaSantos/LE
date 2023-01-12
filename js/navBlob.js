@@ -7,12 +7,12 @@ window.addEventListener('wheel', changeBlockBlob);
 
 function changeBlockBlob() {
 
-    const blobCenter = { x: 30, y: 30 };
+    const blobCenter = { x: 40, y: 40 };
 
     let oldPathSplit = blob.getAttribute("d").split(' ');
     oldPathSplit.splice(0, 3);
 
-    let newPath = 'M 5 30';
+    let newPath = 'M 15 40';
 
     let nodes = [];
     while (oldPathSplit.length > 0) nodes.push(oldPathSplit.splice(0, 7));

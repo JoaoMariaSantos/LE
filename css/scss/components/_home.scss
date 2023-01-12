@@ -1,42 +1,33 @@
-#home__text--interaction {
-    padding: 1vh;
-    padding-top: 10vh;
-    left: 0;
-    line-height: 11.2vw;
-    overflow: hidden;
-    margin: auto;
-    font-weight: 800;
-    font-family: blop;
-    letter-spacing: 3em;
-    line-height: 17vw;
-    width: 97%;
-    position: relative;
+#home__text {
+    display: flex;
+    align-content: center;
+    justify-content: center;
     overflow: visible;
-    user-select: none;
 
-    span:first-of-type {
-        font-size: 37vw;
+    &--interaction {
+        margin: auto;
+        width: 97%;
+        overflow: visible;
+        user-select: none;
+
+        div{
+            display: flex;
+            justify-content: center;
+            overflow: visible;
+            margin-top: 8px;
+
+            div{
+                display: inline-block;
+                width: 288px;
+                height: 462px;
+                margin: -24px;
+                background-image: url("/assets/spritesheet/spriteSheet_03.png");
+
+                &:hover{
+                    filter: invert(49%) sepia(64%) saturate(2439%) hue-rotate(346deg) brightness(94%) contrast(95%);
+                    cursor: pointer;
+                }
+            }
+        }
     }
-
-    span:last-of-type {
-        font-size: 37vw;
-    }
-}
-
-.home__effects--top {
-    width: 120vw;
-    height: 240vw;
-    position: absolute;
-    filter: saturate(0);
-    top: 0;
-    user-select: none;
-}
-
-.home__effects--bottom {
-    width: 100vw;
-    height: 200vw;
-    position: absolute;
-    filter: saturate(0);
-    top: 0;
-    user-select: none;
 }

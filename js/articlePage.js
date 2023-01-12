@@ -22,8 +22,8 @@ const horizontalMoveMagnitude = 0.3;
 const verticalMoveMagnitude = 0.05;
 
 //valores a multiplicar por largura/altura da janela utilizados no getTransform()
-const horizontalEffectMagnitude = 0.5;
-const verticalEffectMagnitude = 0.01;
+const horizontalEffectMagnitude = 0.2;
+const verticalEffectMagnitude = 0.3;
 
 //window size
 const windowWidth = window.innerWidth;
@@ -106,8 +106,10 @@ function addScrollAnimations(elements) {
 
 function getTransform() { //gera valores para o transform
     const translatedWidth = Math.floor(-windowWidth * horizontalEffectMagnitude + Math.random() * (windowWidth * horizontalEffectMagnitude * 2));
+    //const translatedWidth = 0;
 
     const translatedHeight = Math.floor(-windowHeight * verticalEffectMagnitude + Math.random() * (windowHeight * verticalEffectMagnitude * 2));
+    //const translatedHeight = windowHeight;
 
     return ["translate(" + translatedWidth + "px, " + translatedHeight + "px) scale(0.95)",
         "translate(0) scale(1)"];

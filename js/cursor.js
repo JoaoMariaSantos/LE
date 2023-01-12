@@ -6,5 +6,4 @@ $(document).mousemove(function(e){
       "top": e.pageY - o.top,
       "left": e.pageX - o.left
     });
-    console.log('moved');
 });

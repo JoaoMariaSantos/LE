@@ -4,6 +4,7 @@ nav {
     justify-content: center;
     z-index: $z__top;
     overflow: hidden;
+    font-family: 'lexend';
 
     #nav__blob {
         position: relative;
@@ -36,7 +37,9 @@ nav {
             border: 1px solid rgba(0, 0, 0, 0);
             width: max-content;
             display: inline;
-            margin-right: 24px;
+            margin-right: 4em;
+            font-size: 1.5em;
+            overflow: visible;
 
             &:last-child {
                 margin-right: 0;
@@ -47,31 +50,33 @@ nav {
         }
 
         #nav__option--selected {
+            transform-origin: center;
+            transform: scale(200%);
             font-weight: 900;
+            font-size: 1.8em;
         }
     }
-}
 
-nav:hover {
-    #nav__blob {
-        position: relative;
-        border-radius: 50%;
-        /* top: -$headerHeight/2; */
-        /* opacity: 0; */
-        width: 100vw;
-        height: 100vw;
-        transition: all 0.6s cubic-bezier(0, 0.55, 0.45, 1) 0s;
-    }
-
-    ul {
-        transition: all 0.6s cubic-bezier(0, 0.55, 0.45, 1);
-        transform: scale(100%);
-        opacity: 1;
-
-        li:hover {
-            border: 1px solid white;
+    &:hover {
+        #nav__blob {
+            position: relative;
             border-radius: 50%;
-            display: inline;
+            /* top: -$headerHeight/2; */
+            /* opacity: 0; */
+            width: 100vw;
+            height: 100vw;
+            transition: all 0.6s cubic-bezier(0, 0.55, 0.45, 1) 0s;
+        }
+    
+        ul {
+            transition: all 0.6s cubic-bezier(0, 0.55, 0.45, 1);
+            transform: scale(100%);
+            opacity: 1;
+    
+        }
+
+        a:hover{
+            color: $color !important;
         }
     }
 }
