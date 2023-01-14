@@ -1,4 +1,20 @@
 main {
+    #about__img{
+        position:absolute;
+        top:0;
+        left:0;
+        width:150vw;
+        height:150vh;
+        
+        img{
+            z-index:-1;
+            position:absolute;
+            height: auto;
+        }
+    }
+
+
+
     #about__text {
         width: 100vw;
         height: 100vh - $headerHeight;

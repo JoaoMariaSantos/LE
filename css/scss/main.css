@@ -256,6 +256,18 @@ nav:hover a:hover {
   filter: invert(54%) sepia(32%) saturate(5214%) hue-rotate(345deg) brightness(93%) contrast(97%) blur(1px);
 }
 
+main #about__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150vw;
+  height: 150vh;
+}
+main #about__img img {
+  z-index: -1;
+  position: absolute;
+  height: auto;
+}
 main #about__text {
   width: 100vw;
   height: 90vh;
