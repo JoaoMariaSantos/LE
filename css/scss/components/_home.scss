@@ -5,7 +5,7 @@
     overflow: visible;
     height: 100vh;
     padding-top: $headerHeight;
-    background-image: url('../LE/assets/effects/index_background.svg');
+    background-image: url('../../assets/effects/index_background.svg');
     background-size: cover;
     background-position-y: 0px;
 
@@ -27,7 +27,7 @@
                 width: 144px;
                 height: 231px;
                 //margin: -24px;
-                background-image: url("../LE/assets/spritesheet/spriteSheet_02.png");
+                background-image: url("../../assets/spritesheet/spriteSheet_02.png");
 
                 &:hover{
                     filter: invert(49%) sepia(64%) saturate(2439%) hue-rotate(346deg) brightness(94%) contrast(95%);
