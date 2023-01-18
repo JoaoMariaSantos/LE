@@ -1,5 +1,16 @@
-#article {
+#article.thirteen_ways {
     p:last-child {
         margin-top: 20%;
+    }
+
+    .article--effect {
+        transform: scale(20%);
+        z-index: -1;
+        filter: grayscale(100%);
+
+        &__colored {
+            filter: grayscale(100%);
+            filter: invert(54%) sepia(32%) saturate(5214%) hue-rotate(345deg) brightness(93%) contrast(97%) blur(1px);
+        }
     }
 }

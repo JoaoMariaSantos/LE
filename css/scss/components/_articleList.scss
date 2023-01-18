@@ -1,6 +1,9 @@
 #postList {
     width: 100vw;
     height: 100vh - $headerHeight;
+    background-image: url(/assets/effects/articleList_background.svg);
+    background-size: cover;
+    background-position: 0px;
 
     .post {
         display: flex;

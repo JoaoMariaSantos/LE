@@ -7,6 +7,7 @@ $articleParagraphWidth: 40%;
     overflow-y: auto;
     padding: 80px;
     padding-bottom: 200px;
+    display: block;
 
     &::-webkit-scrollbar {
         display: none;
@@ -15,6 +16,7 @@ $articleParagraphWidth: 40%;
     *{
         transform-origin: center;
         position: relative;
+        line-height: 145%;
     }
 
     #title{
@@ -25,6 +27,7 @@ $articleParagraphWidth: 40%;
         margin-right: auto;
         position: relative;
         display: block;
+        max-height: 70vh;
     }
 
     h1{
@@ -73,13 +76,4 @@ $articleParagraphWidth: 40%;
     .article--item__right{
         margin-left: calc(100% - $articleParagraphWidth);
     }
-
-    .article--effect{
-        transform: scale(20%);
-        z-index: -1;
-        &__colored{
-            filter: invert(54%) sepia(32%) saturate(5214%) hue-rotate(345deg) brightness(93%) contrast(97%) blur(1px);
-        }
-    }
-
 }

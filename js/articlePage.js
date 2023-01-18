@@ -11,8 +11,10 @@ let scrollEffectElements = document.querySelectorAll('#article *:not(div)');
 const nElementsToIgnore = 2;
 
 //images
-const nImages = 500;
+const nImages = 250;
 const loadedCheck = new Array(nImages);
+const minWidth = 30;
+const maxWidth = 90;
 
 //container
 const container = document.querySelector('#article');
@@ -32,20 +34,34 @@ const windowHeight = window.innerHeight;
 //getImages(nImages);
 
 let nLoaded = 0;
-getImages(nImages);
+getImages(nImages / 4, true);
+getImages(nImages / 2, false);
 addScrollAnimations(scrollEffectElements);
 
-function getImages(n) {
-    const folder = container.classList[0];
+function getImages(n, boolean) {
+    let folder = 'effectsSmall';
+    if(boolean) folder = container.classList[0];
+
     const existingImages = parseInt(container.classList[1]);
 
     for (let i = 0; i < n; i++) {
         const img = document.createElement('img');
         img.className = "article--effect";
-        if(Math.random()*1 < 0.3) img.classList.add("article--effect__colored")
+        img.classList.add(folder);
+        if(Math.random()*1 < 0.3) img.classList.add("article--effect__colored");
+
         img.style.position = "absolute";
-        img.style.left = Math.floor(- 100 + Math.random() * container.clientWidth + 100) + 'px';
-        img.style.top = Math.floor(Math.random() * container.scrollHeight) + 'px';
+
+        const leftValue = Math.floor(- 100 + Math.random() * container.clientWidth + 100);
+        const topValue = Math.floor(Math.random() * container.scrollHeight);
+        img.style.left = leftValue + 'px';
+        img.style.top = topValue + 'px';
+
+        let widthValue;
+        if(boolean) widthValue = minWidth*2 + Math.floor(Math.random()*(maxWidth*2 - minWidth));
+        else widthValue = minWidth + Math.floor(Math.random()*(maxWidth*0.7 - minWidth));
+        img.style.width = widthValue + 'px';
+
         img.src = "/assets/" + folder + "/img (" + (Math.floor(Math.random() * existingImages) + 1) + ").png";
         container.append(img);
 
@@ -57,7 +73,7 @@ function getImages(n) {
 function imgLoaded(i) {
     //loadedCheck[i] = true;
     nLoaded ++;
-    console.log(nLoaded + ' / ' + nImages);
+    //console.log(nLoaded + ' / ' + nImages);
     //if (!loadedCheck.includes(undefined)) addScrollAnimations(document.querySelectorAll('#article .article--effect'));
 }
 

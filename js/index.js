@@ -4,18 +4,24 @@ const letterDivs = container.querySelectorAll('.glyph');
 const nLetters = 9;
 const nPhases = 11;
 
-let spriteW = 288;
-let spriteH = 462;
+let spriteW = 144;
+let spriteH = 231;
 
 const spriteURL = '/assets/spritesheet/spriteSheet_03.png'
 
 let letterTracker = new Array(nLetters);
+
+//
+
+let backgroundScroll = 0;
+const backgroundScrollInc = 97;
 
 setupTracker();
 
 function setupTracker() {
     fillTracker();
     window.addEventListener('wheel', managePhases);
+    window.addEventListener('wheel', handleBackground);
     updateDivs();
     applyClickListener();
 }
@@ -29,7 +35,6 @@ function fillTracker(){
 function managePhases() {
 
     for(let i = 0; i < letterTracker.length; i++){
-        console.log(i + "   " + letterTracker[i].direction + "  " + letterTracker[i].phase);
         let toAdd = Math.floor(Math.random() * 2);
 
         if (!letterTracker[i].direction) toAdd *= -1;
@@ -70,4 +75,9 @@ function applyClickListener(){
 function setRandomLetter(i){
     letterTracker[i].phase = Math.floor(Math.random()*(nPhases));
     updateDivs();
+}
+
+function handleBackground(){
+    backgroundScroll += Math.floor(Math.random() * backgroundScrollInc);
+    document.querySelector('#home__text').style.backgroundPositionY = backgroundScroll + 'px';
 }

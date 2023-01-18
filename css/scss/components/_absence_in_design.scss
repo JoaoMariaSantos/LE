@@ -1,0 +1,26 @@
+#article.absence_in_design {
+
+    .absence_in_design {
+        z-index: -1;
+        filter: grayscale(100%);
+    }
+
+    /* .absence_in_design.article--effect__colored {
+        filter: grayscale(100%);
+        filter: sepia(100%) saturate(1000%) hue-rotate(350deg) brightness(80%);
+    } */
+
+    .effectsSmall {
+        z-index: -1;
+        filter: grayscale(100%);
+    }
+
+    .effectsSmall.article--effect__colored {
+        filter: grayscale(100%);
+        filter: invert(54%) sepia(32%) saturate(5214%) hue-rotate(345deg) brightness(93%) contrast(97%) blur(1px);
+    }
+
+    p {
+        margin-bottom: 80px;
+    }
+}

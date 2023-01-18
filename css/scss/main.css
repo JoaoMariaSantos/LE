@@ -152,11 +152,16 @@ nav:hover a:hover {
 
 #home__text {
   display: flex;
-  align-content: center;
-  justify-content: center;
+  align-items: center;
+  justify-items: center;
   overflow: visible;
+  height: 90vh;
+  background-image: url(/assets/effects/index_background.svg);
+  background-size: cover;
+  background-position-y: 0px;
 }
 #home__text--interaction {
+  display: block;
   margin: auto;
   width: 97%;
   overflow: visible;
@@ -173,10 +178,9 @@ nav:hover a:hover {
 }
 #home__text--interaction div div {
   display: inline-block;
-  width: 288px;
-  height: 462px;
-  margin: -24px;
-  background-image: url("/assets/spritesheet/spriteSheet_03.png");
+  width: 144px;
+  height: 231px;
+  background-image: url("/assets/spritesheet/spriteSheet_02.png");
 }
 #home__text--interaction div div:hover {
   filter: invert(49%) sepia(64%) saturate(2439%) hue-rotate(346deg) brightness(94%) contrast(95%);
@@ -190,6 +194,7 @@ nav:hover a:hover {
   overflow-y: auto;
   padding: 80px;
   padding-bottom: 200px;
+  display: block;
 }
 #article::-webkit-scrollbar {
   display: none;
@@ -197,6 +202,7 @@ nav:hover a:hover {
 #article * {
   transform-origin: center;
   position: relative;
+  line-height: 145%;
 }
 #article #title {
   width: 100%;
@@ -206,6 +212,7 @@ nav:hover a:hover {
   margin-right: auto;
   position: relative;
   display: block;
+  max-height: 70vh;
 }
 #article h1 {
   font-size: 3vw;
@@ -248,13 +255,6 @@ nav:hover a:hover {
 #article .article--item__right {
   margin-left: 60%;
 }
-#article .article--effect {
-  transform: scale(20%);
-  z-index: -1;
-}
-#article .article--effect__colored {
-  filter: invert(54%) sepia(32%) saturate(5214%) hue-rotate(345deg) brightness(93%) contrast(97%) blur(1px);
-}
 
 main #about__img {
   position: absolute;
@@ -296,6 +296,9 @@ main #about__text div p {
 #postList {
   width: 100vw;
   height: 90vh;
+  background-image: url(/assets/effects/articleList_background.svg);
+  background-size: cover;
+  background-position: 0px;
 }
 #postList .post {
   display: flex;
@@ -369,6 +372,37 @@ main #about__text div p {
   transform: scale(0.2);
 }
 
-#article p:last-child {
+#article.thirteen_ways p:last-child {
   margin-top: 20%;
+}
+#article.thirteen_ways .article--effect {
+  transform: scale(20%);
+  z-index: -1;
+  filter: grayscale(100%);
+}
+#article.thirteen_ways .article--effect__colored {
+  filter: grayscale(100%);
+  filter: invert(54%) sepia(32%) saturate(5214%) hue-rotate(345deg) brightness(93%) contrast(97%) blur(1px);
+}
+
+#article.absence_in_design {
+  /* .absence_in_design.article--effect__colored {
+      filter: grayscale(100%);
+      filter: sepia(100%) saturate(1000%) hue-rotate(350deg) brightness(80%);
+  } */
+}
+#article.absence_in_design .absence_in_design {
+  z-index: -1;
+  filter: grayscale(100%);
+}
+#article.absence_in_design .effectsSmall {
+  z-index: -1;
+  filter: grayscale(100%);
+}
+#article.absence_in_design .effectsSmall.article--effect__colored {
+  filter: grayscale(100%);
+  filter: invert(54%) sepia(32%) saturate(5214%) hue-rotate(345deg) brightness(93%) contrast(97%) blur(1px);
+}
+#article.absence_in_design p {
+  margin-bottom: 80px;
 }/*# sourceMappingURL=main.css.map */
