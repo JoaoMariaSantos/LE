@@ -63,8 +63,9 @@ nav {
             border-radius: 50%;
             /* top: -$headerHeight/2; */
             /* opacity: 0; */
-            width: 100vw;
-            height: 100vw;
+            width: 150vw;
+            height: 150vh;
+            transform: scale(300%);
             transition: all 0.6s cubic-bezier(0, 0.55, 0.45, 1) 0s;
         }
     

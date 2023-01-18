@@ -138,8 +138,9 @@ nav:hover #nav__blob {
   border-radius: 50%;
   /* top: -$headerHeight/2; */
   /* opacity: 0; */
-  width: 100vw;
-  height: 100vw;
+  width: 150vw;
+  height: 150vh;
+  transform: scale(300%);
   transition: all 0.6s cubic-bezier(0, 0.55, 0.45, 1) 0s;
 }
 nav:hover ul {
@@ -325,6 +326,7 @@ main #about__text div p {
 #postList .post img {
   max-width: 80%;
   max-height: 80%;
+  filter: brightness(0%);
 }
 
 .cursor {
@@ -382,7 +384,7 @@ main #about__text div p {
   margin-top: 20%;
 }
 #article.thirteen_ways .article--effect {
-  transform: scale(40%);
+  transform: scale(50%);
   z-index: -1;
   filter: grayscale(100%);
 }

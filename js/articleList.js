@@ -21,7 +21,7 @@ function handleScroll() {
         main.style.backgroundPositionY = backgroundScrollValue + 'px';
 
         scrollEnabled = false;
-        setTimeout(function() { enableScroll(); }, 1000);
+        setTimeout(function() { enableScroll(); }, 2000);
     }
 }
 

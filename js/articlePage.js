@@ -13,8 +13,8 @@ const nElementsToIgnore = 2;
 //images
 const nImages = 250;
 const loadedCheck = new Array(nImages);
-const minWidth = 30;
-const maxWidth = 90;
+const minWidth = 50;
+const maxWidth = 100;
 
 //container
 const container = document.querySelector('#article');
