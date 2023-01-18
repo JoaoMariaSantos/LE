@@ -7,7 +7,7 @@ const nPhases = 11;
 let spriteW = 144;
 let spriteH = 231;
 
-const spriteURL = '/assets/spritesheet/spriteSheet_03.png'
+const spriteURL = '../LE/assets/spritesheet/spriteSheet_03.png'
 
 let letterTracker = new Array(nLetters);
 

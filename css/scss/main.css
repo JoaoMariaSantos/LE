@@ -210,7 +210,7 @@ nav:hover a:hover {
 }
 #article #title {
   width: 100%;
-  margin-top: -20px;
+  margin-top: 10vh;
   margin-bottom: 0;
   margin-left: auto;
   margin-right: auto;
