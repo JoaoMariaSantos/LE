@@ -68,7 +68,7 @@ function getImages(n, boolean) {
             img.style.transform = 'scale(30%)'
         }
 
-        img.src = "/assets/" + folder + "/img (" + (Math.floor(Math.random() * existingImages) + 1) + ").png";
+        img.src = "../LE/assets/" + folder + "/img (" + (Math.floor(Math.random() * existingImages) + 1) + ").png";
         container.append(img);
 
         //loadedCheck[i] = false;
