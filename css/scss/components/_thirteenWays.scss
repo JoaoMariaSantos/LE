@@ -4,13 +4,13 @@
     }
 
     .article--effect {
-        transform: scale(20%);
+        transform: scale(40%);
         z-index: -1;
         filter: grayscale(100%);
 
         &__colored {
             filter: grayscale(100%);
-            filter: invert(54%) sepia(32%) saturate(5214%) hue-rotate(345deg) brightness(93%) contrast(97%) blur(1px);
+            filter: invert(54%) sepia(32%) saturate(5214%) hue-rotate(345deg) brightness(93%) contrast(97%);
         }
     }
 }

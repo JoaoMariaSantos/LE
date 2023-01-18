@@ -1,7 +1,8 @@
 $headerHeight : 10vh;
 
 header {
-    display: relative;
+    position: fixed;
+    top:0;
     width: 100vw;
     height: $headerHeight;
     z-index: $z__top;

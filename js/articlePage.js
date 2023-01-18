@@ -24,8 +24,8 @@ const horizontalMoveMagnitude = 0.3;
 const verticalMoveMagnitude = 0.05;
 
 //valores a multiplicar por largura/altura da janela utilizados no getTransform()
-const horizontalEffectMagnitude = 0.07;
-const verticalEffectMagnitude = 0.08;
+const horizontalEffectMagnitude = 0.1;
+const verticalEffectMagnitude = 0.12;
 
 //window size
 const windowWidth = window.innerWidth;
@@ -38,9 +38,10 @@ getImages(nImages / 4, true);
 getImages(nImages / 2, false);
 addScrollAnimations(scrollEffectElements);
 
+
 function getImages(n, boolean) {
     let folder = 'effectsSmall';
-    if(boolean) folder = container.classList[0];
+    if (boolean) folder = container.classList[0];
 
     const existingImages = parseInt(container.classList[1]);
 
@@ -48,8 +49,7 @@ function getImages(n, boolean) {
         const img = document.createElement('img');
         img.className = "article--effect";
         img.classList.add(folder);
-        if(Math.random()*1 < 0.3) img.classList.add("article--effect__colored");
-
+        if (Math.random() * 1 < 0.3) img.classList.add("article--effect__colored");
         img.style.position = "absolute";
 
         const leftValue = Math.floor(- 100 + Math.random() * container.clientWidth + 100);
@@ -58,9 +58,15 @@ function getImages(n, boolean) {
         img.style.top = topValue + 'px';
 
         let widthValue;
-        if(boolean) widthValue = minWidth*2 + Math.floor(Math.random()*(maxWidth*2 - minWidth));
-        else widthValue = minWidth + Math.floor(Math.random()*(maxWidth*0.7 - minWidth));
+        if (boolean) widthValue = minWidth * 2 + Math.floor(Math.random() * (maxWidth * 2 - minWidth));
+        else widthValue = minWidth + Math.floor(Math.random() * (maxWidth * 0.7 - minWidth));
         img.style.width = widthValue + 'px';
+
+        if (Math.random() * 1 < 0.25) {
+            img.style.filter = 'blur(1px)';
+            img.style.zIndex = '-10';
+            img.style.transform = 'scale(30%)'
+        }
 
         img.src = "/assets/" + folder + "/img (" + (Math.floor(Math.random() * existingImages) + 1) + ").png";
         container.append(img);
@@ -72,7 +78,7 @@ function getImages(n, boolean) {
 
 function imgLoaded(i) {
     //loadedCheck[i] = true;
-    nLoaded ++;
+    nLoaded++;
     //console.log(nLoaded + ' / ' + nImages);
     //if (!loadedCheck.includes(undefined)) addScrollAnimations(document.querySelectorAll('#article .article--effect'));
 }

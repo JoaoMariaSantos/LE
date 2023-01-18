@@ -3,7 +3,8 @@
     align-items: center;
     justify-items: center;
     overflow: visible;
-    height: 100vh - $headerHeight;
+    height: 100vh;
+    padding-top: $headerHeight;
     background-image: url(/assets/effects/index_background.svg);
     background-size: cover;
     background-position-y: 0px;
