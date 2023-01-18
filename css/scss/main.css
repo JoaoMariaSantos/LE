@@ -300,6 +300,7 @@ main #about__text div p {
   width: 50%;
   margin-left: auto;
   margin-right: auto;
+  font-size: larger;
 }
 
 #postList {
